@@ -92,15 +92,44 @@ Use `git status` to list all new or modified files that haven't yet been committ
 ```
 git status
 ```
+Output :-
+```
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
 `touch <filename>` command creates new files in the folder using git
 ```
-touch file1.txt
+touch file2.txt
 ```
+
+Open your folder and check, you will find 2 files, file1.txt & file2.txt
+
 **2C. Adding files to staging area**
 
 `git add -A` command is used to add all files of the folder to the staging area.
 ```
 git add -A
+```
+
+```
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+        new file:   file2.txt
 ```
 **2D. Commit files to Git**
 
@@ -113,9 +142,117 @@ After staging your changes, next step is to commit them into your local Git repo
 ```bash
  git commit -m "first commit"
 ```
+
+```
+$ git commit -m "first commit"
+[master (root-commit) fa09c03] first commit
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+```
 Staging and committing are two different steps in Git. You can't commit a change until it has been staged. If you are working with a tracked file, then you can do both of these steps in a single command.
 
-Edit your git file
+Edit your git file. Make changes in `file1.txt` 
 
+```
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file1.txt
+```
+
+3.  git checkout <filename> command to revert back the changes
+
+```
+ git checkout file1.txt
+```
+```
+ $ git checkout file1.txt
+Updated 1 path from the index
+```
+ ```
+ $ git status
+On branch master
+nothing to commit, working tree clean
+```
+ 
+ Make more changes into the `file1.txt`
+ ```
+ Hope you are having a good time
+Git-ting it?
+ ```
+ ```
+ git add -A
+ ```
+ ```
+ git commit -m "Added 2 more lines"
+ ```
+ ```
+ $ git commit -m "Added 2 more lines"
+[master e019564] Added 2 more lines
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+
+$ git status
+On branch master
+nothing to commit, working tree clean
+```
+ 2nd change :-
+ Add this line in `file1.txt`
+ ```
+ This is after 2nd change
+ ```
+ ```
+ git add -A
+ ```
+ ```
+ git commit -m "2nd change"
+ ```
+ Output:-
+ ```
+ $ git add -A
+
+$ git commit -m "2nd change"
+[master 3cdb441] 2nd change
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+```
+ 
+ Git log 
+ 
+ `git log` command is used to obtain the history of the previous commits
+ ```
+ git log
+ ```
+ 
+ Output will look something like this, there might be change
+ ```
+ $ git log
+commit 3cdb44131c3b05d44b8a0035d35e65f55af5695c (HEAD -> master)
+Author: Karthik <karthikprabhu23223@gmail.com>
+Date:   Wed Nov 9 00:06:13 2022 +0530
+
+    2nd change
+
+commit e0195648d7026fe8d53868875deec748ec925130
+Author: Karthik <karthikprabhu23223@gmail.com>
+Date:   Wed Nov 9 00:04:11 2022 +0530
+
+    Added 2 more lines
+
+commit e1f346eb90b39a6e647cb36acac32e28f38ed5da
+Author: Karthik <karthikprabhu23223@gmail.com>
+Date:   Tue Nov 8 23:52:39 2022 +0530
+
+    Hello everybody commit
+
+commit 7c4c26f8e86120f7a91b0edc50c1347a932bd176
+Author: Karthik <karthikprabhu23223@gmail.com>
+Date:   Tue Nov 8 23:43:57 2022 +0530
+
+    first commit
+```
+ 
 Check the status of your repository. This time it will say it is a **modified** change.
 
