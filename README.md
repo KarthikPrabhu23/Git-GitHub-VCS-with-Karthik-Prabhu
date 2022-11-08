@@ -54,11 +54,16 @@ The command shown above populates a file named `.gitconfig` in your user home di
 $ cat ~/.gitconfig
 ```
 ```
+[filter "lfs"]
+        required = true
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
 [user]
-	name = Karthik Prabhu
-	email = karthikprabhu23223@gmail.com
-[push]
-	default = simple
+        name = Karthik
+        name = Karthik
+        email = karthikprabhu23223@gmail.com
+        name = Karthik
 ```
 
 **2b. init command & other basics**
@@ -67,12 +72,18 @@ $ cat ~/.gitconfig
 ```
  git init
 ```
+```
+Initialized empty Git repository in C:/Users/Karthik Prabhu/Desktop/folder1/.git/
+```
 `ls` command lists all the files in the computer’s folder
 ```
  git ls
 ```
+```
+file1.txt
+```
 
-git status command provides the overview of the git
+`git status` command provides the overview of the git
 
 Time and again we will need to know status of our Git repository. By status what we mean is the current state of the repository. E.g., what needs to be added to the index, what needs to be committed, if there is any change that we have to commit, etc., This is the command that you will use the most.
 
