@@ -163,7 +163,9 @@ Changes not staged for commit:
         modified:   file1.txt
 ```
 
-3.  git checkout <filename> command to revert back the changes
+**2E.  git checkout**
+
+git checkout <filename> command to revert back the changes
 
 ```
  git checkout file1.txt
@@ -219,7 +221,7 @@ $ git commit -m "2nd change"
  1 file changed, 2 insertions(+), 1 deletion(-)
 ```
  
- Git log 
+ **2F Git log**
  
  `git log` command is used to obtain the history of the previous commits
  ```
@@ -229,6 +231,12 @@ $ git commit -m "2nd change"
  Output will look something like this, there might be change
  ```
  $ git log
+ 
+ `git log` command gives the history of all commits in git
+ ```
+ git log
+ ```
+
 commit 3cdb44131c3b05d44b8a0035d35e65f55af5695c (HEAD -> master)
 Author: Karthik <karthikprabhu23223@gmail.com>
 Date:   Wed Nov 9 00:06:13 2022 +0530
@@ -253,6 +261,119 @@ Date:   Tue Nov 8 23:43:57 2022 +0530
 
     first commit
 ```
+ **2G. git diff**
+ Git diff command :-
  
-Check the status of your repository. This time it will say it is a **modified** change.
+ - Make a change in your `file1.txt`
+ - Add the following line at the end of `file1.txt` :-
+```
+ Change for git diff
+```
+ 
+ ```
+ git diff
+ ```
+ Output :-
+ ```
+ $ git diff
+diff --git a/file1.txt b/file1.txt
+index c78ad48..3927b98 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -1,4 +1,5 @@
+ Hello everybody !!
+ Hope you are having a good time
+ Git-ting it?
+ This is after 2nd change
+\ No newline at end of file
++Change for git diff
+\ No newline at end of file
+```
+**2H. git rm**
+ The `git rm` command is used to remove a file from git or from the staging area.
+ 
+ - Type 1 :- Removing file from git:-
+ 
+ - Create a new file `waste.txt`
+ ```
+ touch waste.txt
+ ```
+ - Add it to the staging area 
+ ```
+ git add waste.txt
+ ```
+ - commit the file to git
+ ```
+ git commit -a -m "Added waste.txt file to git
+ ```
+ - Use the `git rm` command to remove it from git 
+ ```
+ git rm waste.txt
+ ```
+ Output :-
+```
+ rm 'waste.txt'
+ ```
+ - run `git status` to check if it is deleted 
+ ```
+ git status
+ ```
+ Expected output :-
+```
+ $ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    waste.txt
+```
+ 
+- Type 2 :- Removing file from the staging area
+- Created a file called ‘waste.txt’
+- Pushed file to stage
+- Removed file from stage using command
+- The file is not deleted from computer
 
+ 
+### .gitignore files
+
+Every Git repository should have another configuration file `.gitignore` present in the root. This file is used to specify files and file patterns that you want git to ignore . 
+ 
+ 
+## Working with branches
+
+A branch represents an independent line of development. You use branch for following:
+
+1. Develop a new feature. Once you are done with the feature, it can be merged into your main branch.
+2. Fix a bug.
+3. Your experiment playground.
+
+By default, every git repository has one branch called **master**. When you create a new branch, you get a new development workspace. Any change that you make to the new working directory has no impact on your previous working directory.
+
+### git branch
+
+**git branch** command lets you work with Git branches.
+
+To view all the branches, you execute following command.
+
+```bash
+$ git branch
+* master
+```
+
+> **branch marked with a * is the current branch.**
+
+Let's suppose we have to implement some new functionality. To work on new functionality, we create a new branch called `feature1`.
+
+```bash
+$ git branch feature1
+```
+
+You can view branch list again.
+
+```
+$ git branch
+  feature1
+* master
+```
+
+One thing that is important to understand here is Git branches are just pointers to commits. When you create a branch, all Git needs to do is create a new pointer; it doesn’t change the repository in any other way.
