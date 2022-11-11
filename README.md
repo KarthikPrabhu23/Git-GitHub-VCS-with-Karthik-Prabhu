@@ -163,6 +163,9 @@ Changes not staged for commit:
         modified:   file1.txt
 ```
 
+
+![Structure of git](https://miro.medium.com/max/828/1*NHVAmdG_VRlqOw0jqQdoLQ.png)
+
 **2e.  git checkout**
 
 git checkout <filename> command to revert back the changes
@@ -379,5 +382,4 @@ git branch feature1
 ```
 
 One thing that is important to understand here is Git branches are just pointers to commits. When you create a branch, all Git needs to do is create a new pointer; it doesn’t change the repository in any other way.
- 
-  Testing for fork, Pull
+
