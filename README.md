@@ -113,6 +113,10 @@ touch file2.txt
 
 Open your folder and check, you will find 2 files, file1.txt & file2.txt
 
+
+**What is a STAGING AREA ?**
+
+
 **2c. Adding files to staging area**
 
 `git add -A` command is used to add all files of the folder to the staging area.
