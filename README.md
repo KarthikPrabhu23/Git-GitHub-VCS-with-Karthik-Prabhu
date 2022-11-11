@@ -50,8 +50,8 @@ Followed by your name & email
 
 The command shown above populates a file named `.gitconfig` in your user home directory with configuration information.
 
-```bash
-$ cat ~/.gitconfig
+```
+ cat ~/.gitconfig
 ```
 ```
 [filter "lfs"]
@@ -77,7 +77,7 @@ Initialized empty Git repository in C:/Users/Karthik Prabhu/Desktop/folder1/.git
 ```
 `ls` command lists all the files in the computer’s folder
 ```
- git ls
+ls
 ```
 ```
 file1.txt
