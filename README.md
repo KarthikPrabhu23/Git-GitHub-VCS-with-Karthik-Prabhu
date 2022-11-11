@@ -125,7 +125,10 @@ git add -A
 ```
 
 ```
-$ git status
+git status
+```
+Output :-
+```
 On branch master
 
 No commits yet
@@ -150,16 +153,19 @@ After staging your changes, next step is to commit them into your local Git repo
 ```
 $ git commit -m "first commit"
 [master (root-commit) fa09c03] first commit
- 2 files changed, 2 insertions(+)
+ 2 files changed, 1 insertions(+)
  create mode 100644 file1.txt
  create mode 100644 file2.txt
 ```
 Staging and committing are two different steps in Git. You can't commit a change until it has been staged. If you are working with a tracked file, then you can do both of these steps in a single command.
 
-Edit your git file. Make changes in `file1.txt` 
+**Edit your git file. Make changes in** `file1.txt` 
 
 ```
-$ git status
+git status
+```
+Output :-
+```
 On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -177,53 +183,74 @@ git checkout <filename> command to revert back the changes
 ```
  git checkout file1.txt
 ```
+Output :-
 ```
  $ git checkout file1.txt
 Updated 1 path from the index
 ```
+Check status 
+```
+git status
+```
+Output :-
  ```
  $ git status
 On branch master
 nothing to commit, working tree clean
 ```
+
+You observe that the changes made are deleted.
+The first version of your file exists !!
  
- Make more changes into the `file1.txt`
+ 
+ **Now,Make more changes into** `file1.txt`
+ 
+ Add this in file1.txt 
  ```
  Hope you are having a good time
 Git-ting it?
  ```
+ 
+ Add the changes to staging area
+ 
  ```
  git add -A
  ```
+ Commit the changes from staging area to Git :-
  ```
  git commit -m "Added 2 more lines"
  ```
+ Output :-
  ```
  $ git commit -m "Added 2 more lines"
 [master e019564] Added 2 more lines
  1 file changed, 3 insertions(+), 1 deletion(-)
-
-
+```
+Check status again :-
+```
+git status
+```
+Output :-
+```
 $ git status
 On branch master
 nothing to commit, working tree clean
 ```
  2nd change :-
  Add this line in `file1.txt`
- ```
+```
  This is after 2nd change
- ```
+```
+Add to staging area :-
  ```
  git add -A
  ```
+ Commit from staging area to Git
  ```
  git commit -m "2nd change"
  ```
  Output:-
  ```
- $ git add -A
-
-$ git commit -m "2nd change"
 [master 3cdb441] 2nd change
  1 file changed, 2 insertions(+), 1 deletion(-)
 ```
@@ -248,12 +275,6 @@ Author: Karthik <karthikprabhu23223@gmail.com>
 Date:   Wed Nov 9 00:04:11 2022 +0530
 
     Added 2 more lines
-
-commit e1f346eb90b39a6e647cb36acac32e28f38ed5da
-Author: Karthik <karthikprabhu23223@gmail.com>
-Date:   Tue Nov 8 23:52:39 2022 +0530
-
-    Hello everybody commit
 
 commit 7c4c26f8e86120f7a91b0edc50c1347a932bd176
 Author: Karthik <karthikprabhu23223@gmail.com>
@@ -285,8 +306,9 @@ index c78ad48..3927b98 100644
  Hello everybody !!
  Hope you are having a good time
  Git-ting it?
- This is after 2nd change
+ -This is after 2nd change
 \ No newline at end of file
++This is after 2nd change
 +Change for git diff
 \ No newline at end of file
 ```
@@ -306,7 +328,14 @@ index c78ad48..3927b98 100644
  ```
  - commit the file to git
  ```
- git commit -a -m "Added waste.txt file to git
+ git commit -a -m "Added waste.txt file to git"
+ ```
+ Output :-
+ ```
+ [master dea6f4d] Added waste.txt file to git
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 waste.txt
+
  ```
  - Use the `git rm` command to remove it from git 
  ```
